@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import image from "../Assests/sign_in.jpeg";
+import image from "../Assests/main3.jpg";
 import logo from "../Assests/logo.png";
-import { FaRegUser } from "react-icons/fa";
-import { RiLock2Fill } from "react-icons/ri";
-
+import { Link } from "react-router-dom";
+// import { FaRegUser } from "react-icons/fa";
+// import { RiLock2Fill } from "react-icons/ri";
 
 const SignInPage = () => {
   const [signUp, setSignUp] = useState(false);
@@ -19,63 +19,80 @@ const SignInPage = () => {
 
   return (
     <div className="w-full flex h-screen ">
-      <div className=" lg:flex justify-center  items-center hidden ">
-        <img className=" w-full h-full bg-cover  " src={image} alt="lgoo" />
+      <div className=" lg:flex  hidden ">
+        <img className=" contrast-125" src={image} alt="lgoo" />
       </div>
       {password ? (
         <div className="flex w-[1000px] h-full flex-col justify-center mx-auto lg:px-8">
-          <div className="">
+          {/* <div className="self-start">
           <img
-              className=" mx-auto h-[84px] w-auto p-2 border  border-neutral-500"
+              className="my-auto h-[74px]  w-auto  p-2 border  border-neutral-500"
               src={logo}
               alt="Your Company"
             />
+          </div> */}
+          <div className="flex flex-col my-[300px]">
+            <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+              {/* <RiLock2Fill className="mx-auto h-[74px] w-auto p-2 border" /> */}
+              <img
+              className="mx-auto h-[74px]  w-auto  p-2 border  border-neutral-500"
+              src={logo}
+              alt="Your Company"
+            />
+              <h2 className="mt-6 text-center text-4xl font-bold leading-9 tracking-tight text-gray-900">
+                Forgot Password
+              </h2>
+              <p className="text-center p-2">
+                {" "}
+                You can reset your password here{" "}
+              </p>
             </div>
-            <div className="flex flex-col m-[180px]">
-          <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <RiLock2Fill className="mx-auto h-[74px] w-auto p-2 border" />
-            <h2 className="mt-6 text-center text-4xl font-bold leading-9 tracking-tight text-gray-900">
-              Forgot Password
-            </h2>
-            <p className="text-center p-2"> You can reset your password here </p>
-          </div>
-          <div className="mt-[20px] sm:mx-auto sm:w-full sm:max-w-sm p-4">
-            <form className="space-y-6" action="#" method="POST">
-              <div>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="email address"
-                  autoComplete="current-password"
-                  required
-                  className="block w-full px-3 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#33a297] sm:text-sm sm:leading-6"
-                />
-              </div>
-              <div className="flex justify-between ">
-                <button
-                  onClick={handlePassword}
-                  className="m-2 flex w-full justify-center rounded-md bg-[#adb0ae] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#747572] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#747572]"
-                >
-                  Back
-                </button>
-                <button
-                  type="submit"
-                  className=" m-2 flex w-full justify-center rounded-md bg-[#247ba0] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#33a297] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#33a297]"
-                >
-                  Reset my password
-                </button>
-              </div>
-
-            </form>
-          </div>
+            <div className="mt-[20px] sm:mx-auto sm:w-full sm:max-w-sm p-4">
+              <form className="space-y-6" action="#" method="POST">
+                <div>
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="email address"
+                    autoComplete="current-password"
+                    required
+                    className="block w-full px-3 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#33a297] sm:text-sm sm:leading-6"
+                  />
+                </div>
+                <div className="flex justify-between ">
+                  <button
+                    onClick={handlePassword}
+                    className="m-2 flex w-full justify-center rounded-md bg-[#adb0ae] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#747572] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#747572]"
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="submit"
+                    className="hidden m-2 lg:flex w-full justify-center rounded-md bg-[#247ba0] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#33a297] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#33a297]"
+                    >
+                    Reset my password
+                  </button>
+                  <button
+                    type="submit"
+                    className="lg:hidden m-2 flex w-full justify-center rounded-md bg-[#247ba0] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#33a297] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#33a297]"
+                    >
+                    Reset
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       ) : signUp ? (
         <div className="flex w-[1000px] h-full flex-col justify-center mx-auto lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            
-            < FaRegUser className="mx-auto h-[74px] w-auto p-2 border "/>
+            {/* <FaRegUser className="mx-auto h-[74px] w-auto p-2 border " /> */}
+            <img
+              className="mx-auto h-[74px]  w-auto  p-2 border  border-neutral-500"
+              src={logo}
+              alt="Your Company"
+            />
             <h2 className="mt-9 text-center text-4xl font-bold leading-9 tracking-tight text-gray-900">
               Create new account
             </h2>
@@ -177,7 +194,7 @@ const SignInPage = () => {
         <div className="flex w-[1000px] h-full flex-col justify-center mx-auto lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <img
-              className="mx-auto h-[84px] w-auto p-2 border  border-neutral-500"
+              className="mx-auto h-[84px]  w-auto p-2 border  border-neutral-500"
               src={logo}
               alt="Your Company"
             />
@@ -216,12 +233,12 @@ const SignInPage = () => {
                     Password
                   </label>
                   <div className="text-sm">
-                    <a
+                    <Link
                       onClick={handlePassword}
                       className="font-semibold text-[#247ba0] hover:text-[#33a297]"
                     >
                       Forgot password?
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="mt-2">
@@ -248,12 +265,12 @@ const SignInPage = () => {
 
             <p className="mt-10 text-center text-sm text-gray-500 ">
               Not a member?{" "}
-              <a
+              <Link
                 onClick={handleAccount}
                 className="px-1 font-semibold leading-6 text-[#247ba0] hover:text-[#33a297]"
               >
                 Create an account
-              </a>
+              </Link>
             </p>
           </div>
         </div>
