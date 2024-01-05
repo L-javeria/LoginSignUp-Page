@@ -20,10 +20,10 @@ const SignInPage = () => {
   return (
     <div className="w-full flex h-screen ">
       <div className=" lg:flex  hidden ">
-        <img className=" contrast-125" src={image} alt="lgoo" />
+        <img className=" contrast-125 clip-diagonal" src={image} alt="lgoo" />
       </div>
       {password ? (
-        <div className="flex w-[1000px] h-full flex-col justify-center mx-auto lg:px-8">
+        <div className="flex w-[800px] h-full flex-col justify-center mx-auto lg:px-8">
           {/* <div className="self-start">
           <img
               className="my-auto h-[74px]  w-auto  p-2 border  border-neutral-500"
@@ -85,7 +85,7 @@ const SignInPage = () => {
           </div>
         </div>
       ) : signUp ? (
-        <div className="flex w-[1000px] h-full flex-col justify-center mx-auto lg:px-8">
+        <div className="flex w-[800px] h-full flex-col justify-center mx-auto lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             {/* <FaRegUser className="mx-auto h-[74px] w-auto p-2 border " /> */}
             <img
@@ -113,7 +113,7 @@ const SignInPage = () => {
                     type="name"
                     autoComplete="name"
                     required
-                    className="block w-full px-3 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full px-3 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#33a297] sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -191,7 +191,7 @@ const SignInPage = () => {
           </div>
         </div>
       ) : (
-        <div className="flex w-[1000px] h-full flex-col justify-center mx-auto lg:px-8">
+        <div className="flex w-[800px] h-full flex-col justify-center mx-auto lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <img
               className="mx-auto h-[84px]  w-auto p-2 border  border-neutral-500"
